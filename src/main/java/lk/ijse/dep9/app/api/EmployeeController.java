@@ -29,4 +29,17 @@ public class EmployeeController {
     public EmployeeDTO getEmployeeById(@PathVariable Long id){
         return employeeService.getEmployeeDetails(id);
     }
+    @PatchMapping("/{id}")
+    public EmployeeDTO updateEmployee(@PathVariable Long id,@RequestBody EmployeeDTO employeeDTO){
+        EmployeeDTO employeeById = getEmployeeById(id);
+        employeeById.setId(id);
+        employeeById.setFirstName(employeeDTO.getFirstName());
+        employeeById.setLastName(employeeDTO.getLastName());
+        employeeById.setEmailId(employeeDTO.getEmailId());
+        return employeeService.updateEmployee(employeeById);
+    }
+    @DeleteMapping("/{id}")
+    public void deleteEmployee(@PathVariable Long id){
+        employeeService.deleteEmployee(id);
+    }
 }

@@ -6,7 +6,7 @@
 
     <groupId>lk.ijse.dep9</groupId>
     <artifactId>employee-backend</artifactId>
-    <version>0.1.0</version>
+    <version>1.0.0</version>
     <name>employee-backend</name>
     <packaging>jar</packaging>
 
